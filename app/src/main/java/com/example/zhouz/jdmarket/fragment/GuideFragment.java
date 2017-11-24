@@ -61,8 +61,7 @@ public class GuideFragment extends Fragment {
             case 2:
                 view = inflater.inflate(R.layout.guide_pager_two_layout, container, false);
                 break;
-            case 3:
-                view = inflater.inflate(R.layout.guide_pager_three_layout, container, false);
+            default:
                 break;
         }
 

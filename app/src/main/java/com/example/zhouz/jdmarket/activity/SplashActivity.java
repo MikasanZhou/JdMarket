@@ -1,53 +1,33 @@
 package com.example.zhouz.jdmarket.activity;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import android.content.Intent;
+import android.widget.ImageView;
 
 import com.example.commonlib.BaseActivity;
-import com.example.commonlib.constants.Constants;
 import com.example.zhouz.jdmarket.R;
-import com.example.zhouz.jdmarket.adapter.GuideAdapter;
-import com.example.zhouz.jdmarket.fragment.GuideFragment;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SplashActivity extends BaseActivity {
 
-    @BindView(R.id.vp_guide_view_pager)
-    ViewPager mGuideViewPager;
-    
-    private List<Fragment> mPagers;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    @BindView(R.id.iv_splash)
+    ImageView mIvSplash;
 
     @Override
     protected void initData() {
-        mPagers = new ArrayList<>();
-        GuideFragment guideZero = GuideFragment.get(Constants.PAGER_ZERO);
-        GuideFragment guideOne = GuideFragment.get(Constants.PAGER_ONE);
-        GuideFragment guideTwo = GuideFragment.get(Constants.PAGER_TWO);
-        GuideFragment guideThree = GuideFragment.get(Constants.PAGER_THREE);
-        
-        mPagers.add(guideZero);
-        mPagers.add(guideOne);
-        mPagers.add(guideTwo);
-        mPagers.add(guideThree);
-        
-        
+
     }
 
     @Override
     protected void initEvent() {
-        GuideAdapter guideAdapter = new GuideAdapter(getSupportFragmentManager(),mPagers,mContext);
-        mGuideViewPager.setAdapter(guideAdapter);
+        mIvSplash.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(mContext, GuideActivity.class));
+                SplashActivity.this.finish();
+            }
+        }, 1500);
     }
 
     @Override
@@ -58,5 +38,6 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void initView() {
         ButterKnife.bind(this);
+
     }
 }
