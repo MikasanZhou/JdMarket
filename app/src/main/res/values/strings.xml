@@ -1,3 +1,13 @@
 <resources>
+    //引导页
+    <string name="do_it_now">立即体验</string>
+
+    //登录页
+    <string name="login_by_phone">手机号登录</string>
     <string name="app_name">京东商城</string>
+    <string name="login_user_name">用户名</string>
+    <string name="login_password">密码</string>
+    <string name="btn_login">登录</string>
+    <string name="login_enter_register">注册</string>
+    <string name="look_first"><u>先去逛逛</u></string>
 </resources>

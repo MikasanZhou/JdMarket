@@ -16,6 +16,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 引导页
+ */
 public class GuideActivity extends BaseActivity {
 
     @BindView(R.id.vp_guide_view_pager)

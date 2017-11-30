@@ -9,6 +9,9 @@ import com.example.zhouz.jdmarket.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 启动页
+ */
 public class SplashActivity extends BaseActivity {
 
     @BindView(R.id.iv_splash)
@@ -21,12 +24,9 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initEvent() {
-        mIvSplash.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(mContext, GuideActivity.class));
-                SplashActivity.this.finish();
-            }
+        mIvSplash.postDelayed(() -> {
+            startActivity(new Intent(mContext, GuideActivity.class));
+            SplashActivity.this.finish();
         }, 1500);
     }
 

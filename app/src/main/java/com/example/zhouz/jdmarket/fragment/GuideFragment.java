@@ -1,6 +1,7 @@
 package com.example.zhouz.jdmarket.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.zhouz.jdmarket.R;
+import com.example.zhouz.jdmarket.activity.login.LoginActivity;
 
 /**
  * @author
@@ -60,6 +62,10 @@ public class GuideFragment extends Fragment {
                 break;
             case 2:
                 view = inflater.inflate(R.layout.guide_pager_two_layout, container, false);
+                view.findViewById(R.id.tv_begin).setOnClickListener(view1 -> {
+                    startActivity(new Intent(mContext, LoginActivity.class));
+                    getActivity().finish();
+                });
                 break;
             default:
                 break;

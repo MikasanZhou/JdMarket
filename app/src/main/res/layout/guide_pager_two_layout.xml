@@ -11,4 +11,14 @@
         android:src="@mipmap/guide_3"
         android:textColor="@color/colorPrimary"/>
 
+    <Button
+        android:id="@+id/tv_begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_guide_begin_shape"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="@string/do_it_now"/>
+
 </RelativeLayout>
