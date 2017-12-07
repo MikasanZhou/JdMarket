@@ -23,7 +23,29 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+#混淆原则：开源库保留 activity好像是可以混淆的
 
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
 -keep class android.support.**{*;}
+
+#butterknife
+-dontwarn com.jakewharton.**
+-keep public class com.jakewharton.**{*;}
+
+#android support
+-dontwarn com.android.support.**
+-keep public class com.android.support.**{*;}
+
+#retrofit
+-dontwarn com.squareup.retrofit2.**
+-keep public class com.squareup.retrofit2.**{*;}
+
+#fastjson
+-dontwarn com.alibaba.**
+-keep public class com.alibaba.**{*;}
+
+#log4j 
+-keep public class org.apache.Log4j.**{*;}
+
+

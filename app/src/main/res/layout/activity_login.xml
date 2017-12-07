@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhouz.jdmarket.activity.login.LoginActivity">
+    tools:context="com.example.zhouz.jdmarkets.activity.login.LoginActivity">
 
 
     <ImageView
@@ -29,6 +29,7 @@
         android:layout_marginTop="60dp"
         android:background="@drawable/bg_login_user_name_shape"
         android:ems="10"
+        android:textSize="14sp"
         android:text="@string/login_by_phone"
         android:textColor="@color/login_button_shape_color"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +46,7 @@
         android:background="@drawable/bg_login_user_name_shape"
         android:ems="10"
         android:text="@string/login_enter_register"
+        android:textSize="14sp"
         android:textColor="@color/login_button_shape_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -60,6 +62,7 @@
         android:layout_marginTop="10dp"
         android:textColor="#999999"
         android:text="@string/look_first"
+        android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register"/>
