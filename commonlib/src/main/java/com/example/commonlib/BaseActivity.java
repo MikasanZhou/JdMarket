@@ -6,6 +6,8 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 public abstract class BaseActivity extends AppCompatActivity {
     
@@ -16,6 +18,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     public Handler mUiHandler;
     
     private HandlerThread mHandlerThread;
+    
+    protected Toolbar mToolbar;
 
 
     @Override
@@ -24,10 +28,26 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getContentView());
         mContext = this;
 
-        initView();
+        initView(savedInstanceState);
         initData();
         initEvent();
         initHandler();
+        
+        setToolBar();
+    }
+
+ 
+
+    private void setToolBar() {
+        if(mToolbar !=null){
+            setSupportActionBar(mToolbar);
+            mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    finish();
+                }
+            });
+        }
     }
 
     /**
@@ -83,7 +103,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 初始化View
      */
-    protected abstract void initView();
+    protected abstract void initView(Bundle savedInstanceState);
 
     /**
      * 主线程回调

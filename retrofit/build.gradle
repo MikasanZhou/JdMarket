@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -24,7 +25,16 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':commonlib')
     api "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'io.reactivex:rxjava:1.1.10'
+    api 'io.reactivex:rxandroid:1.1.0'
     api 'com.alibaba:fastjson:1.2.41'
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    api 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
+}
+repositories {
+    mavenCentral()
 }

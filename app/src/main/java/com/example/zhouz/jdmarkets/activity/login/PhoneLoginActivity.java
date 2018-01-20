@@ -1,15 +1,33 @@
 package com.example.zhouz.jdmarkets.activity.login;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.commonlib.BaseActivity;
 import com.example.zhouz.jdmarkets.R;
 
-public class PhoneLoginActivity extends AppCompatActivity {
+public class PhoneLoginActivity extends BaseActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phone_login);
+    protected void initData() {
+        
     }
+
+    @Override
+    protected void initEvent() {
+
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_phone_login;
+    }
+
+    @Override
+    protected void initView(Bundle savedInstanceState) {
+        
+        mToolbar = findViewById(R.id.tb_common_toolbar);
+    }
+
+
 }

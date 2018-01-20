@@ -2,10 +2,10 @@ package com.example.retrofit.manager;
 
 import com.example.retrofit.ApiConstants;
 import com.example.retrofit.LoginService;
-import com.example.retrofit.fastjson.FastJsonConverterFactory;
 import com.example.retrofit.model.UserInfo;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -16,6 +16,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
+import retrofit2.converter.fastjson.FastJsonConverterFactory;
 
 /**
  * @author
@@ -29,6 +30,12 @@ public class NetWorkManager {
     private static NetWorkManager mInstance;
 
     private LoginService mLoginService;
+    private Interceptor mIntercept = new Interceptor() {
+        @Override
+        public Response intercept(Chain chain) throws IOException {
+            return null;
+        }
+    };
 
     public static NetWorkManager get() {
         if (mInstance == null) {
@@ -47,7 +54,14 @@ public class NetWorkManager {
                 //ip+端口
                 .baseUrl(ApiConstants.BASE_URL)
                 //fastjson解析
-                .addConverterFactory(FastJsonConverterFactory.create()).client(new OkHttpClient()).build();
+                .addConverterFactory(FastJsonConverterFactory.create())
+                .client(new OkHttpClient.Builder()
+                        .connectTimeout(60, TimeUnit.SECONDS)
+                        .readTimeout(60, TimeUnit.SECONDS)
+                        .writeTimeout(60, TimeUnit.SECONDS)
+                        .addInterceptor(mIntercept)
+                        .build())
+                .build();
 
         mLoginService = retrofit.create(LoginService.class);
     }
@@ -85,5 +99,5 @@ public class NetWorkManager {
             return chain.proceed(request);
         }
     }
-
+    
 }

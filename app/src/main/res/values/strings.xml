@@ -4,7 +4,7 @@
 
     //登录页
     <string name="login_by_phone">手机号登录</string>
-    <string name="app_name">京东商城</string>
+    <string name="app_name">七月商城</string>
     <string name="login_user_name">用户名</string>
     <string name="login_password">密码</string>
     <string name="btn_login">登录</string>

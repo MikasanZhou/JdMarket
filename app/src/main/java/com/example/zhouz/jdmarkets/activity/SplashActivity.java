@@ -1,6 +1,7 @@
 package com.example.zhouz.jdmarkets.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.example.commonlib.BaseActivity;
@@ -19,7 +20,6 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         ButterKnife.bind(this);
 
     }

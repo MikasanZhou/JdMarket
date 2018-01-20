@@ -59,7 +59,8 @@ public class GuideActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         ButterKnife.bind(this);
+
     }
 }

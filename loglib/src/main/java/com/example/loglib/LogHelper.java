@@ -24,7 +24,6 @@ public class LogHelper {
     public static void config(String path, boolean isDebug) {
 
         String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath() + path;
-//        
         Log.d(TAG, "log path:" + absolutePath);
         mLogConfigurator.setFileName(absolutePath);
         mLogConfigurator.setFilePattern("%-d{yyyy-mm-dd HH:mm} [%t:%r]-[%p]-[%1]%m%n");
@@ -39,9 +38,5 @@ public class LogHelper {
         mLogConfigurator.setRootLevel(Level.ERROR);
         mLogConfigurator.setLevel("org.apache", Level.ERROR);
         mLogConfigurator.configure();
-    }
-
-    private static boolean isSdcardMounted() {
-        return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
     }
 }

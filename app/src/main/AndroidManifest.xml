@@ -37,10 +37,13 @@
         </activity>
         <activity android:name=".activity.MainActivity">
         </activity>
-        <activity android:name=".activity.GuideActivity">
+        <activity
+            android:theme="@style/BaseTheme"
+            android:name=".activity.GuideActivity">
         </activity>
         <activity
             android:label="登录选择"
+            android:theme="@style/PagerTheme"
             android:name=".activity.login.LoginActivity">
         </activity>
         <activity 

@@ -9,6 +9,8 @@
     </style>
 
     <style name="BaseTheme" parent="Theme.AppCompat.NoActionBar">
-        
+    </style>
+
+    <style name="PagerTheme" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
 </resources>

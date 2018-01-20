@@ -1,6 +1,7 @@
 package com.example.zhouz.jdmarkets.activity.login;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -58,7 +59,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         ButterKnife.bind(this);
 
     }
